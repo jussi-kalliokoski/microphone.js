@@ -56,11 +56,11 @@ package {
             
                 mic.addEventListener(StatusEvent.STATUS,statusHandler);
                 mic.addEventListener(ActivityEvent.ACTIVITY,activityHandler);
-                mic.codec = SoundCodec.SPEEX;
+                mic.codec = SoundCodec.NELLYMOSER;
                 mic.enableVAD = true;
                 mic.setSilenceLevel(1, 1000);
                 mic.setUseEchoSuppression(true); 
-                mic.setLoopBack(true);
+                mic.setLoopBack(false);
                 mic.gain = 50;
                 
            		ExternalInterface.addCallback("setMic", setMic);
